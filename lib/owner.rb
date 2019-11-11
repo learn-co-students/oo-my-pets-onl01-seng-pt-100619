@@ -1,4 +1,3 @@
-require "pry"
 class Owner
 
   attr_accessor :owner
@@ -74,6 +73,6 @@ class Owner
   end
 
   def list_pets
-    "I have #{dogs.all.count} dog(s), and #{cats.all.count} cat(s)."
+    "I have #{Dog.all.count {|dog| dog.owner == self}} dog(s), and #{Cat.all.count {|cat| cat.owner == self}} cat(s)."
   end
 end
