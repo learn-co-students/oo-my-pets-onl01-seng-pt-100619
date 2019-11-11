@@ -1,3 +1,4 @@
-class Dog
-  # code goes here
+require_relative "./owner.rb"
+class Dog < Owner
+
 end
