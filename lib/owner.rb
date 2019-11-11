@@ -1,6 +1,6 @@
+require "pry"
 class Owner
 
-  attr_accessor :pets
   attr_reader :species, :name
   @@all = []
 
@@ -73,6 +73,7 @@ class Owner
   end
 
   def list_pets
-    "I have #{pets[:dogs].count} dog(s) and #{pets[:cats].count} cat(s)."
+    binding.pry
+    "I have #{@pets[:dogs].count} dog(s), and #{@pets[:cats].count} cat(s)."
   end
 end
