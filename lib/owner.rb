@@ -1,14 +1,15 @@
 require "pry"
 class Owner
 
+  attr_accessor :owner
   attr_reader :species, :name
   @@all = []
 
   def initialize(name)
     @name = name
+    @owners = []
     @species = "human"
     @@all << self
-    @pets = {:dogs => [], :cats => []}
   end
 
   def say_species
@@ -73,6 +74,6 @@ class Owner
   end
 
   def list_pets
-    "I have #{@pets[:dogs].count} dog(s), and #{@pets[:cats].count} cat(s)."
+    "I have #{dogs.all.count} dog(s), and #{cats.all.count} cat(s)."
   end
 end
