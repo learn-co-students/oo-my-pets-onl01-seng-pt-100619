@@ -1,3 +1,5 @@
+require 'pry'
+
 require_relative 'spec_helper.rb'
 
 describe "Associations" do
@@ -15,7 +17,7 @@ describe "Associations" do
         cat_1 = Cat.new("Garfield", @owner)
         cat_2 = Cat.new("Fido", @owner)
         cat_3 = Cat.new("Whiskers", @owner)
-
+        # binding.pry
         expect(@owner.cats[0]).to eq(cat_1)
         expect(@owner.cats[1]).to eq(cat_2)
         expect(@owner.cats[2]).to eq(cat_3)
@@ -46,6 +48,7 @@ describe "Associations" do
         @owner.cats.each do |cat|
           expect(cat).to be_a(Cat)
         end
+
 
         expect(@owner.cats.count).to eq(3)
       end
